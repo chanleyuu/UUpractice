@@ -15,6 +15,7 @@ public:
     std::string getclass() const;
     int gethealth() const;
     int getlevel() const;
+	float gettotalarmour();
     weapon charweapon_;
     
     int getvalue(std::string name) const;
@@ -22,17 +23,19 @@ public:
     
     void additem(std::string name);
     void removeitem(std::string name);
-    
+
+	void equiparmour(armour a);
+	void unequiparmour(std::string name);
+
     void setname(std::string name);
     void setclass(std::string rclass);
     void sethealth(int health);
     void setlevel(int level);
     void setmaxhealth(int maxhealth);
-    void setweapon(std::string name, weapon::weapontype type, 
-                     float damage = 5.0, int level = 1,
-                    int range = 0, int weight = 40,
-                    int durability = 100);
+    void setweapon(weapon w);
+	void dropweapon();
     
+
 private:
     std::string name_;
     std::string rpgclass_;
@@ -40,4 +43,5 @@ private:
     int maxhealth_;
     int level_;
     std::vector<item> inventory_;
+	std::vector<armour> armour_;
 };

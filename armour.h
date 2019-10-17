@@ -6,7 +6,9 @@ class armour {
 public:
     armour();// Constructor
     
-    enum armourtype { Helmet, Shirt, Shoes, Gloves, Legs, None };
+	void remove();// Destructor
+
+    enum armourtype { Helmet, Body, Shoes, Gloves, Legs, None };
     
     std::string getname() const;
     armourtype gettype() const;
@@ -20,7 +22,6 @@ public:
     void setprotect(float protect);
     void setlevel(int level);
     void setweight(int weight);
-    void setrange(int range);
     void setdurability(int durability);
     
 private:

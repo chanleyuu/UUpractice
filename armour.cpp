@@ -1,14 +1,17 @@
 #include "armour.h"
 
 armour::armour(void) {
-    setname("Naked");
-    settype(None);
+    setname("shirt");
+    settype(Body);
     setprotect(0.0);
     setlevel(1);
     setweight(0);
-    setdurability(-1);
+    setdurability(100);
 }
 
+void armour::remove() {
+	delete this;
+}
 
 std::string armour::getname() const {
     return name_;

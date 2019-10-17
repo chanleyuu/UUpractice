@@ -6,7 +6,7 @@ rpgclass::rpgclass(void) {
     sethealth(100);
     setmaxhealth(100);
     setlevel(1);
-    setweapon( "Fist", weapon::Fist);
+    setweapon( charweapon_ );
 }
 
 
@@ -26,6 +26,14 @@ int rpgclass::getlevel() const {
     return level_;
 }
 
+
+float rpgclass::gettotalarmour() {
+	float total = 0.0;
+	for (int i = 0; i < armour_.size(); i++) {
+		total += armour_[i].getprotect();
+	}
+	return total;
+}
 ////////////////////////////////////////////////////////////////////
 
 void rpgclass::additem(std::string name) {
@@ -64,6 +72,27 @@ void rpgclass::removeitem(std::string name) {
 	}
 }
 
+
+void rpgclass::equiparmour(armour a) {
+	int index;
+	for (index = 0; index < armour_.size(); index++) {
+		if (a.gettype() == armour_[index].gettype()) {
+			armour_[index].remove();
+			armour_.erase(armour_.begin() + index);
+		}
+	}
+	armour_.push_back(a);
+}
+
+void rpgclass::unequiparmour(std::string name) {
+	int index;
+	for (index = 0; index < armour_.size(); index++) {
+		if (name == armour_[index].getname()) {
+			armour_[index].remove();
+			armour_.erase(armour_.begin() + index);
+		}
+	}
+}
 ////////////////////////////////////////////////////////////////////
 
 void rpgclass::setname(std::string name) {
@@ -86,15 +115,26 @@ void rpgclass::setmaxhealth(int maxhealth) {
     maxhealth_ = maxhealth;
 }
 
-void rpgclass::setweapon(std::string name, weapon::weapontype type, 
-                     float damage, int level,
-                    int range, int weight,
-                    int durability) {
-    charweapon_.setname(name);
-    charweapon_.settype(type);
-    charweapon_.setdamage(damage);
-    charweapon_.setlevel(level);
-    charweapon_.setrange(range);
-    charweapon_.setweight(weight);
-    charweapon_.setdurability(durability);
+void rpgclass::setweapon(weapon w) {
+	//dropweapon();
+    charweapon_.setname(w.getname);
+    charweapon_.settype(w.gettype);
+    charweapon_.setdamage(w.getdamage);
+    charweapon_.setlevel(w.getlevel);
+    charweapon_.setrange(w.getrange);
+    charweapon_.setweight(w.getweight);
+    charweapon_.setdurability(w.getdurability);
+}
+
+void rpgclass::dropweapon() {
+	/*
+	"Some code placing weapon in game world"
+	*/
+	charweapon_.setname("Fists");
+	charweapon_.settype(weapon::Fist);
+	charweapon_.setdamage(1.0);
+	charweapon_.setlevel(this->getlevel());
+	charweapon_.setrange(0);
+	charweapon_.setweight(0);
+	charweapon_.setdurability(-1);
 }
