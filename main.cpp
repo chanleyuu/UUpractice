@@ -1,8 +1,8 @@
 #include <iostream>
-
-#include "rpgclass.h"
 #include <random>
-//#include "weapon.h"
+#include "rpgclass.h"
+
+#include "weapon.h"
 
 float genrand(float min, float max) {
 	std::random_device r;
@@ -15,7 +15,7 @@ float genrand(float min, float max) {
 void attack(rpgclass a, rpgclass b) {
 	float hit = genrand(0, 1);
 	if (hit > 0.5) {
-		b.sethealth(b.gethealth - a.charweapon_.getdamage / b.gettotalarmour());
+		b.sethealth(b.gethealth() - a.charweapon_.getdamage() / b.gettotalarmour());
 	}
 }
 
@@ -29,6 +29,10 @@ int main(int argc, char** argv) {
 	me.setclass("Wizard");
 	me.setweapon(simple);
 	std::cout << "Hello, " << me.getname() << std::endl;
+	
+	rpgclass* classes{new rpgclass[500] };
+    delete[] classes;
+    std::cout << "Oh No!" << std::endl; 
 	return 0;
 }
 

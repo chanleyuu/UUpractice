@@ -9,7 +9,8 @@
 
 class rpgclass {
 public:
-    rpgclass(); //Constructor 
+    rpgclass(); //Default Constructor 
+    rpgclass(std::string name, std::string rclass, int health, int maxhealth, int level, weapon wep);
     
     std::string getname() const;
     std::string getclass() const;

@@ -9,6 +9,15 @@ rpgclass::rpgclass(void) {
     setweapon( charweapon_ );
 }
 
+rpgclass::rpgclass(std::string name, std::string rclass, int health, int maxhealth, int level, weapon wep) {
+    setname(name);
+    setclass(rclass);
+    sethealth(health);
+    setmaxhealth(maxhealth);
+    setlevel(level);
+    setweapon( wep );
+}
+
 
 std::string rpgclass::getname() const {
     return name_;
@@ -52,6 +61,7 @@ int rpgclass::getvalue(std::string name) const {
 			return inventory_[index].getvalue();
 		}
 	}
+	return 0;
 }
 
 std::string rpgclass::getdescription(std::string name) const {
@@ -117,13 +127,13 @@ void rpgclass::setmaxhealth(int maxhealth) {
 
 void rpgclass::setweapon(weapon w) {
 	//dropweapon();
-    charweapon_.setname(w.getname);
-    charweapon_.settype(w.gettype);
-    charweapon_.setdamage(w.getdamage);
-    charweapon_.setlevel(w.getlevel);
-    charweapon_.setrange(w.getrange);
-    charweapon_.setweight(w.getweight);
-    charweapon_.setdurability(w.getdurability);
+    charweapon_.setname(w.getname());
+    charweapon_.settype(w.gettype());
+    charweapon_.setdamage(w.getdamage());
+    charweapon_.setlevel(w.getlevel());
+    charweapon_.setrange(w.getrange());
+    charweapon_.setweight(w.getweight());
+    charweapon_.setdurability(w.getdurability());
 }
 
 void rpgclass::dropweapon() {
