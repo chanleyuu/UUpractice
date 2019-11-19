@@ -91,6 +91,8 @@ std::string weapon::tostring(){
 		break;
 	case 6: type = "Fist";
 		break;
+	default: type = "Unknown";
+		break;
 	}
 
 	std::string out = "Name: " + this->getname() + "\n Description: " + this->getdescription() + "\n Value: " + std::to_string(this->getvalue()) +
