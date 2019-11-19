@@ -1,15 +1,22 @@
 #pragma once
 
 #include <string>
+#include "item.h"
 
-class weapon {
+
+class weapon :
+		public item {
 public:
     
     enum weapontype { Longsword, Bastardsword, Spear, Mace, Bow, Staff, Fist };
     
     weapon();// Constructor
     
-    std::string getname() const;
+	weapon(std::string name, std::string desc, int value,
+		weapon::weapontype wep, float damage, int level,
+		int range, int weight, int durability);
+
+ //   std::string getname() const;
     weapontype gettype() const;
     float getdamage() const;
     int getlevel() const;
@@ -17,7 +24,7 @@ public:
     int getrange() const;
     int getdurability() const;
     
-    void setname(std::string name);
+   // void setname(std::string name);
     void settype(weapontype type);
     void setdamage(float damage);
     void setlevel(int level);
@@ -25,9 +32,10 @@ public:
     void setrange(int range);
     void setdurability(int durability);
     
+
+	virtual std::string tostring();
 private:
     
-    std::string name_;
     weapontype type_;
     float damage_;
     int level_;

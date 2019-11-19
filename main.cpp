@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 #include "rpgclass.h"
-
+#include "item.h"
 #include "weapon.h"
 
 float genrand(float min, float max) {
@@ -22,11 +22,15 @@ void attack(rpgclass a, rpgclass b) {
 int main(int argc, char** argv) {
 	rpgclass me;
 	weapon simple;
+	item wine;
+	std::cout << simple.tostring() << std::endl;
+	wine.setname("Wine");
+	wine.setdescription("A fine vintage.");
+	wine.setvalue(50);
 	simple.setname("Simple Staff");
 	simple.settype(weapon::Staff);
 	simple.setrange(3);
 	me.setname("Harold");
-	me.setclass("Wizard");
 	me.setweapon(simple);
 	std::cout << "Hello, " << me.getname() << std::endl;
 	

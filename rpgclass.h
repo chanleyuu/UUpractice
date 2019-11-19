@@ -9,8 +9,11 @@
 
 class rpgclass {
 public:
+	enum state { idle, running, walking, stunned, enchanted, burning, poisoned, frozen, sleeping, defending, dead };
+	enum race { Orc, Elf, Undead, Ogre, Human, Demon, Zorbgnak, Scavenger, Dwarf, Witch };
+
     rpgclass(); //Default Constructor 
-    rpgclass(std::string name, std::string rclass, int health, int maxhealth, int level, weapon wep);
+    rpgclass(std::string name, int health, int maxhealth, int level, race rrace);
     
     std::string getname() const;
     std::string getclass() const;
@@ -29,7 +32,6 @@ public:
 	void unequiparmour(std::string name);
 
     void setname(std::string name);
-    void setclass(std::string rclass);
     void sethealth(int health);
     void setlevel(int level);
     void setmaxhealth(int maxhealth);
@@ -37,17 +39,20 @@ public:
 	void dropweapon();
 	void eat();
 	void addspell();
-	virtual void attack();
-	virtual void sleep();
+	void setrace(race rrace);
+	//virtual void attack();
+	//virtual void sleep();
 	void defend();
-	void getstate();
+	state getstate();
+
+	race getrace();
 
 
 
 private:
-	enum race { Orc, Elf, Ogre, Human, demon, Zorbgnak, Scavenger, Dwarf };
-	enum state { idle, running, walking, stunned, enchanted, burning, poisoned, frozen, sleeping, defending, dead};
-
+	
+	race thisrace_;
+	std::vector<state> thisstate_;
 
     std::string name_;
     std::string rpgclass_;

@@ -6,6 +6,11 @@ item::item() {
     setvalue(1);
 }
 
+item::item(std::string name, std::string desc, int value) :
+	name_{ name }, description_{ desc }, value_{ value } {
+
+}
+
 
 std::string item::getname() const {
     return name_;
@@ -29,4 +34,9 @@ void item::setdescription(std::string description) {
 
 void item::setvalue(int value) {
     value_ = value;
+}
+
+std::string item::tostring() {
+	std::string out = "Name: " + this->name_ + " Description: " + this->description_ + " Value: " + std::to_string(value_);
+	return out;
 }

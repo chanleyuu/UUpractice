@@ -5,6 +5,8 @@
 class item {
 public:
     item(); //Constructor
+
+	item(std::string name, std::string desc, int value);
     
     std::string getname() const;
     std::string getdescription() const;
@@ -13,6 +15,8 @@ public:
     void setname(std::string name);
     void setdescription(std::string description);
     void setvalue(int value);
+
+	std::string tostring();
 private:
     std::string name_;
     std::string description_;

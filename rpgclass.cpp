@@ -2,20 +2,20 @@
 
 rpgclass::rpgclass(void) {
     setname("char");
-    setclass("Peasant");
+  //  setclass("Peasant");
     sethealth(100);
     setmaxhealth(100);
     setlevel(1);
     setweapon( charweapon_ );
 }
 
-rpgclass::rpgclass(std::string name, std::string rclass, int health, int maxhealth, int level, weapon wep) {
-    setname(name);
-    setclass(rclass);
-    sethealth(health);
-    setmaxhealth(maxhealth);
-    setlevel(level);
-    setweapon( wep );
+rpgclass::rpgclass(std::string name, int health, int maxhealth, int level, race rrace) {
+    this->name_ = name;
+    this->thisrace_ = rrace;
+    this->health_ = health;
+    this->maxhealth_ = maxhealth;
+    this->level_ = level;
+	weapon fist;
 }
 
 
@@ -71,6 +71,7 @@ std::string rpgclass::getdescription(std::string name) const {
 			return inventory_[index].getdescription();
 		}
 	}
+	return "Could not find item!";
 }
 
 void rpgclass::removeitem(std::string name) {
@@ -109,9 +110,6 @@ void rpgclass::setname(std::string name) {
     name_ = name;
 }
 
-void rpgclass::setclass(std::string rclass) {
-    rpgclass_ = rclass;
-}
 
 void rpgclass::sethealth(int health) {
     health_ = health;
@@ -123,6 +121,10 @@ void rpgclass::setlevel(int level) {
 
 void rpgclass::setmaxhealth(int maxhealth) {
     maxhealth_ = maxhealth;
+}
+
+void rpgclass::setrace(race rrace) {
+	thisrace_ = rrace;
 }
 
 void rpgclass::setweapon(weapon w) {

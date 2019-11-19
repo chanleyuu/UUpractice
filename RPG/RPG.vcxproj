@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\armour.h" />
+    <ClInclude Include="..\Berserker.h" />
     <ClInclude Include="..\item.h" />
     <ClInclude Include="..\rpgclass.h" />
     <ClInclude Include="..\weapon.h" />
