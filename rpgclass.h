@@ -35,14 +35,29 @@ public:
     void setmaxhealth(int maxhealth);
     void setweapon(weapon w);
 	void dropweapon();
-    
+	void eat();
+	void addspell();
+	virtual void attack();
+	virtual void sleep();
+	void defend();
+	void getstate();
+
+
 
 private:
+	enum race { Orc, Elf, Ogre, Human, demon, Zorbgnak, Scavenger, Dwarf };
+	enum state { idle, running, walking, stunned, enchanted, burning, poisoned, frozen, sleeping, defending, dead};
+
+
     std::string name_;
     std::string rpgclass_;
     int health_;
     int maxhealth_;
     int level_;
+	int strength_;
+	int intellegence_;
+	int faith_;
+	int dexterity_;
     std::vector<item> inventory_;
 	std::vector<armour> armour_;
 };
