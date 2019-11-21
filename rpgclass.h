@@ -37,7 +37,7 @@ public:
     void setmaxhealth(int maxhealth);
     void setweapon(weapon w);
 	void dropweapon();
-	void eat();
+	void eat(item food);
 	void addspell();
 	void setrace(race rrace);
 	//virtual void attack();
@@ -63,6 +63,8 @@ private:
 	int intellegence_;
 	int faith_;
 	int dexterity_;
+	int endurance_;
+	int stanima_;
     std::vector<item> inventory_;
 	std::vector<armour> armour_;
 };

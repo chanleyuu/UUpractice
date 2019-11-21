@@ -127,6 +127,10 @@ void rpgclass::setrace(race rrace) {
 	thisrace_ = rrace;
 }
 
+void rpgclass::eat(item food) {
+	removeitem(food.getname());
+}
+
 void rpgclass::setweapon(weapon w) {
 	//dropweapon();
     charweapon_.setname(w.getname());
