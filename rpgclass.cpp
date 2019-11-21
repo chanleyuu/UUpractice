@@ -1,4 +1,5 @@
 #include "rpgclass.h"
+#include <random>
 
 rpgclass::rpgclass(void) {
     setname("char");
@@ -50,7 +51,7 @@ void rpgclass::additem(std::string name) {
 //	if (mark >= 0 && mark <= 100) {
 	newitem.setname(name);
 	inventory_.push_back(newitem);
-	
+	weight_ += newitem.getweight();
 			//	mark_[mark_.size - 1].setmarks(mark);
 }
 
@@ -142,7 +143,7 @@ void rpgclass::setweapon(weapon w) {
     charweapon_.setdurability(w.getdurability());
 }
 
-void rpgclass::dropweapon() {
+void rpgclass::dropweapon(world w) {
 	/*
 	"Some code placing weapon in game world"
 	*/
@@ -153,4 +154,40 @@ void rpgclass::dropweapon() {
 	charweapon_.setrange(0);
 	charweapon_.setweight(0);
 	charweapon_.setdurability(-1);
+}
+
+void rpgclass::setstate(state st) {
+	if (thisstate_[st] == false) {
+		thisstate_[st] = true;
+	} 
+	else {
+		thisstate_[st] = false;
+	}
+
+}
+
+bool rpgclass::getstate(state st) {
+	return thisstate_[st];
+}
+
+void rpgclass::sleep() {
+	health_ += 10;
+}
+
+void rpgclass::attack(rpgclass& target) {
+	if (genrand(0.0f, 1.0f) > (float)dexterity_ / 100.0f) {
+		target.sethealth(target.gethealth() - charweapon_.getdamage() / target.gettotalarmour());
+	}
+}
+
+float rpgclass::genrand(float min, float max) {
+	std::random_device r;
+	std::seed_seq seed2{ r(), r(), r(), r(), r(), r(), r(), r() };
+	std::mt19937 eng(seed2);
+	std::uniform_real_distribution<float> dist(min, max);
+	return dist(eng);
+}
+
+void rpgclass::defend() {
+	setstate(defending);
 }

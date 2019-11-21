@@ -6,6 +6,7 @@
 #include "weapon.h"
 #include "item.h"
 #include "armour.h"
+#include "world.h"
 
 class rpgclass {
 public:
@@ -36,26 +37,30 @@ public:
     void setlevel(int level);
     void setmaxhealth(int maxhealth);
     void setweapon(weapon w);
-	void dropweapon();
+	void dropweapon(world w);
 	void eat(item food);
 	void addspell();
 	void setrace(race rrace);
-	//virtual void attack();
-	//virtual void sleep();
+	void setstate(state st);
+	virtual void attack(rpgclass& target);
+	virtual void sleep();
 	void defend();
-	state getstate();
+	void walk(world w);
+	bool getstate(state st);
 
 	race getrace();
 
+	float genrand(float min, float max);
 
 
 private:
 	
 	race thisrace_;
-	std::vector<state> thisstate_;
+	bool thisstate_[11];
 
     std::string name_;
     std::string rpgclass_;
+	int weight_;
     int health_;
     int maxhealth_;
     int level_;

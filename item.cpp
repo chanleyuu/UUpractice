@@ -24,6 +24,10 @@ int item::getvalue() const {
     return value_;
 }
 
+int item::getweight() const {
+	return weight_;
+}
+
 void item::setname(std::string name) {
     name_ = name;
 }
@@ -34,6 +38,10 @@ void item::setdescription(std::string description) {
 
 void item::setvalue(int value) {
     value_ = value;
+}
+
+void item::setweight(int weight) {
+	weight_ = weight;
 }
 
 std::string item::tostring() {
