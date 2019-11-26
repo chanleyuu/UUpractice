@@ -1,77 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+      <UniqueIdentifier>{3a7c8876-5f7a-42cf-9ca2-79392d486fcd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c3992df0-81db-44a8-b622-6520feb0df6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\world.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\rpgclass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\armour.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\weapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Berserker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Blackwitch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\Cleric.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Blackwitch.h">
+    <ClInclude Include="..\effect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Inquisitor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\rpgclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\world.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\armour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Berserker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Blackwitch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Cleric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Inquisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\rpgclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\armour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Berserker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\world.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Cleric.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Blackwitch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Inquisitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

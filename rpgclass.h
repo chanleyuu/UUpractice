@@ -22,7 +22,14 @@ public:
     std::string getclass() const;
     int gethealth() const;
     int getlevel() const;
+	int getfaith() const;
+	int getexp() const;
+	int getdexterity() const;
+	int getendurance() const;
     int& getlocation();
+	int getstanima();
+	int getrotation();
+	race getrace();
 	float gettotalarmour();
     weapon charweapon_;
     
@@ -46,13 +53,20 @@ public:
 	void setrace(race rrace);
 	void setstate(state st);
     void setlocation(int &loc);
+	void setfaith(int faith);
+	void setexp(int exp);
+	void setdexterity(int dex);
+	void setendurance(int end);
+	void setlocation(int &loc);
+	void setstanima(int stan);
+	void setrotation(int spin);
+	void setrace(race r);
+
 	virtual void attack(rpgclass& target);
 	virtual void sleep();
 	void defend();
 	void walk(world w);
 	bool getstate(state st);
-
-	race getrace();
 
 	float genrand(float min, float max);
 
