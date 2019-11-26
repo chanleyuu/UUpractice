@@ -42,6 +42,45 @@ int rpgclass::getlevel() const {
     return level_;
 }
 
+int rpgclass::getstregnth() const {
+	return strength_;
+}
+
+int rpgclass::getfaith() const {
+	return faith_;
+}
+
+int rpgclass::getexp() const {
+	return exp_;
+}
+
+int rpgclass::getintelligence() const {
+	return intelligence_;
+}
+
+int rpgclass::getdexterity() const {
+	return dexterity_;
+}
+
+int rpgclass::getendurance() const {
+	return endurance_;
+}
+
+int& rpgclass::getlocation() const {
+	return *location_;
+}
+
+int rpgclass::getstanima() const {
+	return stanima_;
+}
+
+int rpgclass::getrotation() const {
+	return rotation_;
+}
+
+rpgclass::race rpgclass::getrace() const {
+	return thisrace_;
+}
 
 float rpgclass::gettotalarmour() {
 	float total = 0.0;

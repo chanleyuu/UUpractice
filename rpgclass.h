@@ -22,14 +22,17 @@ public:
     std::string getclass() const;
     int gethealth() const;
     int getlevel() const;
+	int getstregnth() const;
 	int getfaith() const;
 	int getexp() const;
+	int getintelligence() const;
 	int getdexterity() const;
 	int getendurance() const;
-    int& getlocation();
-	int getstanima();
-	int getrotation();
-	race getrace();
+    int& getlocation() const;
+	int getstanima() const;
+	int getrotation() const;
+	race getrace() const;
+
 	float gettotalarmour();
     weapon charweapon_;
     
@@ -55,6 +58,8 @@ public:
     void setlocation(int &loc);
 	void setfaith(int faith);
 	void setexp(int exp);
+	void setstregnth(int strength);
+	void setinelligence(int intel);
 	void setdexterity(int dex);
 	void setendurance(int end);
 	void setlocation(int &loc);
@@ -83,7 +88,7 @@ private:
     int maxhealth_;
     int level_;
 	int strength_;
-	int intellegence_;
+	int intelligence_;
     int exp_;
 	int faith_;
 	int dexterity_;
