@@ -16,10 +16,13 @@ public:
     rpgclass(); //Default Constructor 
     rpgclass(std::string name, int health, int maxhealth, int level, race rrace);
     
+    ~rpgclass();
+    
     std::string getname() const;
     std::string getclass() const;
     int gethealth() const;
     int getlevel() const;
+    int& getlocation();
 	float gettotalarmour();
     weapon charweapon_;
     
@@ -42,6 +45,7 @@ public:
 	void addspell();
 	void setrace(race rrace);
 	void setstate(state st);
+    void setlocation(int &loc);
 	virtual void attack(rpgclass& target);
 	virtual void sleep();
 	void defend();
@@ -66,10 +70,14 @@ private:
     int level_;
 	int strength_;
 	int intellegence_;
+    int exp_;
 	int faith_;
 	int dexterity_;
 	int endurance_;
 	int stanima_;
     std::vector<item> inventory_;
 	std::vector<armour> armour_;
+    
+    int* location_;
+    int rotation_;
 };

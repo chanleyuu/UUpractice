@@ -19,6 +19,12 @@ rpgclass::rpgclass(std::string name, int health, int maxhealth, int level, race 
 	weapon fist;
 }
 
+rpgclass::~rpgclass()
+{
+    delete location_;
+}
+
+
 
 std::string rpgclass::getname() const {
     return name_;
