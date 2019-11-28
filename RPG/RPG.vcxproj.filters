@@ -39,6 +39,7 @@
     <ClInclude Include="..\world.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="location.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\armour.cpp">
@@ -71,5 +72,6 @@
     <ClCompile Include="..\world.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="location.cpp" />
   </ItemGroup>
 </Project>
