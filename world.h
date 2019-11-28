@@ -5,12 +5,16 @@
 #include <vector>
 
 #include "rpgclass.h"
+#include "location.h"
+
 class rpgclass;
 
 class world {
 private:
-	int squares[100][100];
+	location squares_[100][100];
+	location* origin_ = &squares_[0][0];
 	std::vector<int> ID;
 public:
-	void move(int dir, int speed, rpgclass you);
+	bool move(int dir, rpgclass you);
+	void changeloc(location& oldloc, location& newloc);
 };

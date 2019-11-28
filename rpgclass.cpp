@@ -66,8 +66,9 @@ int rpgclass::getendurance() const {
 	return endurance_;
 }
 
-int& rpgclass::getlocation() const {
-	return *location_;
+int* rpgclass::getlocation() {
+	
+	return location_;
 }
 
 int rpgclass::getstanima() const {
@@ -171,6 +172,14 @@ void rpgclass::setmaxhealth(int maxhealth) {
 
 void rpgclass::setrace(race rrace) {
 	thisrace_ = rrace;
+}
+
+void rpgclass::setlocation(location* loc) {
+	*location_ = *loc;
+}
+
+void rpgclass::setfaith(int faith) {
+	faith_ = faith;
 }
 
 void rpgclass::eat(item food) {

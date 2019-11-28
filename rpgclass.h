@@ -7,6 +7,7 @@
 #include "item.h"
 #include "armour.h"
 #include "world.h"
+#include "location.h"
 
 class rpgclass {
 public:
@@ -28,7 +29,7 @@ public:
 	int getintelligence() const;
 	int getdexterity() const;
 	int getendurance() const;
-    int& getlocation() const;
+    int* getlocation();
 	int getstanima() const;
 	int getrotation() const;
 	race getrace() const;
@@ -55,7 +56,7 @@ public:
 	void addspell();
 	void setrace(race rrace);
 	void setstate(state st);
-    void setlocation(int &loc);
+    void setlocation(location* loc);
 	void setfaith(int faith);
 	void setexp(int exp);
 	void setstregnth(int strength);
@@ -97,6 +98,6 @@ private:
     std::vector<item> inventory_;
 	std::vector<armour> armour_;
     
-    int* location_;
+    location* location_;
     int rotation_;
 };
