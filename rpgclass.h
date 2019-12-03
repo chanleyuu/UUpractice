@@ -29,7 +29,7 @@ public:
 	int getintelligence() const;
 	int getdexterity() const;
 	int getendurance() const;
-    int* getlocation();
+    location* getlocation();
 	int getstanima() const;
 	int getrotation() const;
 	race getrace() const;

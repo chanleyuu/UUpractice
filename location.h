@@ -4,8 +4,9 @@
 class location
 {
 public:
-	enum occupier { ground, weapon, water, empty, chest, terrian, vegetation, rock, wall, npc, player, tree, flyingplayer };
+	enum occupier { empty, weapon, chest, vegetation, rock, wall, npc, player, tree, flyingplayer, portal };
 
+	enum type { ground, air, water };
 	location();
 
 	location(occupier occ);

@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <iostream>
 
 #include "rpgclass.h"
 #include "location.h"
@@ -13,14 +14,18 @@ class world {
 private:
 	int X_;
 	int Y_;
-	location squares_[100][100];
-	location* origin_ = &squares_[0][0];
+	std::vector< std::vector<location> > loco_ ;
+	std::vector<location> squares_;
+	//std::vector<std::vector<location>> map_;
+	location* origin_ = &loco_[0][0];
 	std::vector<int> ID;
 public:
 	world();
 
-	void loadworld();
-	void saveworld();
+	world(int x, int y);
+
+	void loadworld(std::string filepath);
+	void saveworld(std::string filepath);
 	bool move(int dir, rpgclass you);
 	void changeloc(location& oldloc, location& newloc);
 };

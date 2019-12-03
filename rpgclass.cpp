@@ -66,7 +66,7 @@ int rpgclass::getendurance() const {
 	return endurance_;
 }
 
-int* rpgclass::getlocation() {
+location* rpgclass::getlocation() {
 	
 	return location_;
 }
