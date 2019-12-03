@@ -4,7 +4,7 @@
 class location
 {
 public:
-	enum occupier { empty, ground, npc, player, chest, terrian, vegetation, weapon, wall, water, rock };
+	enum occupier { ground, weapon, water, empty, chest, terrian, vegetation, rock, wall, npc, player, tree, flyingplayer };
 
 	location();
 
@@ -12,12 +12,16 @@ public:
 
 	occupier getoccupier() const;
 
-	void setoccupier(occupier occ) const;
+	void setoccupier(occupier occ);
+
+	bool ispassibleground();
+
+	bool ispassibleair();
 
 private:
 	occupier occ_;
-	bool passabletoground;
-	bool passibletofly;
+	//bool passabletoground;
+	//bool passibletofly;
 	
 };
 

@@ -71,6 +71,7 @@
     <ClCompile Include="..\Cleric.cpp" />
     <ClCompile Include="..\Inquisitor.cpp" />
     <ClCompile Include="..\item.cpp" />
+    <ClCompile Include="..\location.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\rpgclass.cpp" />
     <ClCompile Include="..\weapon.cpp" />
