@@ -20,7 +20,7 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 
 bool world::move(int dir, rpgclass you)
 {
-	location* loc = you.getlocation;
+	location* loc = you.getlocation();
 	location* newloc = nullptr;
 
 	switch (dir) {
