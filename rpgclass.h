@@ -12,7 +12,10 @@
 class rpgclass {
 public:
 	enum state { idle, running, walking, stunned, enchanted, burning, poisoned, frozen, sleeping, defending, dead };
+	const std::vector<std::string> statenames { "idle", "running", "walking", "stunned", "enchanted", "burning", "poisoned", "frozen", "sleeping", "defending", "dead" };
+
 	enum race { Orc, Elf, Undead, Ogre, Human, Demon, Zorbgnak, Scavenger, Dwarf, Witch };
+	const std::vector<std::string> racenames{ "Orc", "Elf", "Undead", "Ogre", "Human", "Demon", "Zorbgnak", "Scavenger", "Dwarf", "Witch" };
 
     rpgclass(); //Default Constructor 
     rpgclass(std::string name, int health, int maxhealth, int level, race rrace);
@@ -21,6 +24,7 @@ public:
     
     std::string getname() const;
     std::string getclass() const;
+	std::string getracename() const;
     int gethealth() const;
     int getlevel() const;
 	int getstregnth() const;

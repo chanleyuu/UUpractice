@@ -1,4 +1,7 @@
 #pragma once
+
+#include <string>
+
 //#include "world.h"
 
 class location
@@ -15,7 +18,7 @@ public:
 
 	void setoccupier(occupier occ);
 
-	type gettype() const;
+	location::type gettype() const;
 	void settype(type tp);
 
 	bool ispassibleground();

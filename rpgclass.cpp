@@ -83,6 +83,10 @@ rpgclass::race rpgclass::getrace() const {
 	return thisrace_;
 }
 
+std::string rpgclass::getracename() const {
+	return racenames[thisrace_];
+}
+
 float rpgclass::gettotalarmour() {
 	float total = 0.0;
 	for (int i = 0; i < armour_.size(); i++) {
@@ -184,6 +188,18 @@ void rpgclass::setfaith(int faith) {
 
 void rpgclass::eat(item food) {
 	removeitem(food.getname());
+}
+
+void rpgclass::setexp(int exp) {
+	exp_ = exp;
+}
+
+void rpgclass::setstregnth(int strength) {
+	strength_ = strength;
+}
+
+void rpgclass::setinelligence(int intel) {
+	intelligence_ = intel;
 }
 
 void rpgclass::setweapon(weapon w) {

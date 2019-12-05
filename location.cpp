@@ -1,6 +1,6 @@
 #include "location.h"
 
-location::location() : occ_{ empty }, tp_{ ground } {
+location::location() : occ_{ occupier::empty }, tp_{ type::ground } {
 
 }
 
@@ -21,7 +21,7 @@ location::type location::gettype() const {
 }
 
 bool location::ispassibleground() {
-	if (occ_ < empty) {
+	if (occ_ == empty) {
 		return true;
 	}
 	return false;

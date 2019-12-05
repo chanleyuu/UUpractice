@@ -78,7 +78,7 @@ void world::changeloc(location& oldloc, location& newloc) {
 	newloc.setoccupier(location::occupier::player);
 }
 
-void world::loadworld(std::string filepath) {
+world::world(std::string filepath) {
 	std::string temp;
 	std::ifstream worldfile{ filepath, std::ios::in };
 
@@ -111,4 +111,8 @@ void world::loadworld(std::string filepath) {
 	}
 
 	worldfile.close();
+}
+
+void world::saveworld(std::string filepath) {
+
 }

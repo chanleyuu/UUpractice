@@ -24,7 +24,9 @@ public:
 
 	world(int x, int y);
 
-	void loadworld(std::string filepath);
+	world(std::string filepath);
+
+	//void loadworld(std::string filepath);
 	void saveworld(std::string filepath);
 	bool move(int dir, rpgclass you);
 	void changeloc(location& oldloc, location& newloc);
