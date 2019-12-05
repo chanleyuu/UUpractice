@@ -93,6 +93,22 @@ void world::loadworld(std::string filepath) {
 	Y_ = std::stoi(temp);
 
 	while (!worldfile.eof()) {
-		std::getline(worldfile, temp);
+		for (int e = 0; e < Y_; e++) {
+
+			loco_.push_back(squares_);
+
+			for (int i = 0; i < X_; i++) {
+				int num1;
+				int num2;
+				std::getline(worldfile, temp, ',');
+				num1 = std::stoi(temp);
+				std::getline(worldfile, temp, ',');
+				num2 = std::stoi(temp);
+				loco_[e].push_back(location((location::occupier)num1, (location::type) num2));
+			}
+		}
+
 	}
+
+	worldfile.close();
 }

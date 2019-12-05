@@ -9,11 +9,14 @@ public:
 	enum type { ground, air, water };
 	location();
 
-	location(occupier occ);
+	location(occupier occ, type tp);
 
 	occupier getoccupier() const;
 
 	void setoccupier(occupier occ);
+
+	type gettype() const;
+	void settype(type tp);
 
 	bool ispassibleground();
 
@@ -21,6 +24,7 @@ public:
 
 private:
 	occupier occ_;
+	type tp_;
 	//bool passabletoground;
 	//bool passibletofly;
 	

@@ -1,10 +1,10 @@
 #include "location.h"
 
-location::location() {
+location::location() : occ_{ empty }, tp_{ ground } {
 
 }
 
-location::location(occupier occ) : occ_{ occ } {
+location::location(occupier occ, type tp) : occ_{ occ }, tp_{ tp } {
 
 }
 
@@ -14,6 +14,10 @@ location::occupier location::getoccupier() const {
 
 void location::setoccupier(occupier occ) {
 	occ_ = occ;
+}
+
+location::type location::gettype() const {
+	return tp_;
 }
 
 bool location::ispassibleground() {
