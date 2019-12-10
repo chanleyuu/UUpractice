@@ -114,5 +114,24 @@ world::world(std::string filepath) {
 }
 
 void world::saveworld(std::string filepath) {
-
+    std::ofstream worldfile{ filepath, std::ios::out };
+    
+    if (!worldfile) {
+		exit(EXIT_FAILURE);
+	}
+	
+	
+	if (worldfile.is_open()){
+        
+        worldfile << X_ << std::endl;
+        worldfile << Y_ << std::endl;
+        
+        for (int i = 0; i < loco_.size(); i++) {
+            for (int e = 0; e < loco_[i].size(); e++){
+                
+            }
+        }
+        
+    }
+    
 }
