@@ -128,10 +128,14 @@ void world::saveworld(std::string filepath) {
         
         for (int i = 0; i < loco_.size(); i++) {
             for (int e = 0; e < loco_[i].size(); e++){
-                
+				worldfile << loco_[i][e].getoccupier();
+				worldfile << ",";
+				worldfile << loco_[i][e].gettype();
+				worldfile << ",";
             }
+			worldfile << "\n";
         }
         
     }
-    
+	worldfile.close();
 }

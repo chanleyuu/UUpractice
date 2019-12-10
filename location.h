@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 //#include "world.h"
 
@@ -14,9 +15,15 @@ public:
 
 	location(occupier occ, type tp);
 
-	occupier getoccupier() const;
+	long getoccupiers() const;
 
-	void setoccupier(occupier occ);
+	occupier getoccupier(int index) const;
+
+	void setoccupier(int occ);
+
+	void removeoccupier(int index);
+
+	int addoccupier(occupier occ);
 
 	location::type gettype() const;
 	void settype(type tp);
@@ -26,7 +33,7 @@ public:
 	bool ispassibleair();
 
 private:
-	occupier occ_;
+	std::vector<occupier> occ_;
 	type tp_;
 	//bool passabletoground;
 	//bool passibletofly;
