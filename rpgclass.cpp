@@ -94,6 +94,10 @@ float rpgclass::gettotalarmour() {
 	}
 	return total;
 }
+
+int rpgclass::getoccindex() const {
+	return occindex_;
+}
 ////////////////////////////////////////////////////////////////////
 
 void rpgclass::additem(std::string name) {
@@ -200,6 +204,10 @@ void rpgclass::setstregnth(int strength) {
 
 void rpgclass::setinelligence(int intel) {
 	intelligence_ = intel;
+}
+
+void rpgclass::setoccindex(int index) {
+	occindex_ = index;
 }
 
 void rpgclass::setweapon(weapon w) {

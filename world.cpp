@@ -22,41 +22,54 @@ bool world::move(int dir, rpgclass you)
 {
 	location* loc = you.getlocation();
 	location* newloc = nullptr;
+	int index = you.getoccindex;
 
 	switch (dir) {
 	case 1: 
 		if ((loc - origin_) % 101 != 0) {
 			newloc = loc - 1;
-			if (newloc->getoccupier() == location::occupier::empty) {
+			if (newloc->ispassibleground == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
+				loc->removeoccupier(index);
+				index = newloc->addoccupier(location::player);
+				you.setoccindex(index);
 			}
 		}
 		break;
 	case 2:
 		if (loc - origin_ > 100) {
 			newloc = loc - 100;
-			if (newloc->getoccupier() == location::occupier::empty) {
+			if (newloc->ispassibleground == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
+				loc->removeoccupier(index);
+				index = newloc->addoccupier(location::player);
+				you.setoccindex(index);
 			}
 		}
 		break;
 	case 3:
 		if ((loc - origin_) % 100 != 0) {
 			newloc = loc + 1;
-			if (newloc->getoccupier() == location::occupier::empty) {
+			if (newloc->ispassibleground == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
+				loc->removeoccupier(index);
+				index = newloc->addoccupier(location::player);
+				you.setoccindex(index);
 			}
 		}
 		break;
 	case 4:
 		if ((loc - origin_) <= 9900) {
 			newloc = loc + 100;
-			if (newloc->getoccupier() == location::occupier::empty) {
+			if (newloc->ispassibleground == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
+				loc->removeoccupier(index);
+				index = newloc->addoccupier(location::player);
+				you.setoccindex(index);
 			}
 		}
 		break;
@@ -128,7 +141,7 @@ void world::saveworld(std::string filepath) {
         
         for (int i = 0; i < loco_.size(); i++) {
             for (int e = 0; e < loco_[i].size(); e++){
-				worldfile << loco_[i][e].getoccupier();
+				worldfile << loco_[i][e].getoccupiers();
 				worldfile << ",";
 				worldfile << loco_[i][e].gettype();
 				worldfile << ",";

@@ -8,18 +8,20 @@
 class location
 {
 public:
-	enum occupier { empty, weapon, chest, vegetation, rock, wall, npc, player, tree, flyingplayer, portal };
+	enum occupier { empty, item, chest, vegetation, rock, wall, npc, player, tree, flyingplayer, portal };
 
 	enum type { ground, air, water };
 	location();
 
 	location(occupier occ, type tp);
 
-	long getoccupiers() const;
+	std::string getoccupiers() const;
 
 	occupier getoccupier(int index) const;
 
 	void setoccupier(int occ);
+
+	void setoccupier(std::string occ);
 
 	void removeoccupier(int index);
 

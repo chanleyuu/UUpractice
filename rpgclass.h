@@ -36,6 +36,7 @@ public:
     location* getlocation();
 	int getstanima() const;
 	int getrotation() const;
+	int getoccindex() const;
 	race getrace() const;
 
 	float gettotalarmour();
@@ -70,6 +71,7 @@ public:
 	void setlocation(int &loc);
 	void setstanima(int stan);
 	void setrotation(int spin);
+	void setoccindex(int index);
 	void setrace(race r);
 
 	virtual void attack(rpgclass& target);
@@ -80,6 +82,7 @@ public:
 
 	float genrand(float min, float max);
 
+	
 
 private:
 	
@@ -102,6 +105,7 @@ private:
     std::vector<item> inventory_;
 	std::vector<armour> armour_;
     
+	int occindex_;
     location* location_;
     int rotation_;
 };
