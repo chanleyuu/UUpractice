@@ -210,6 +210,26 @@ void rpgclass::setoccindex(int index) {
 	occindex_ = index;
 }
 
+void rpgclass::setdexterity(int dex) {
+	dexterity_ = dex;
+}
+
+void rpgclass::setendurance(int end) {
+	endurance_ = end;
+}
+
+void rpgclass::setlocation(location* loc) {
+	location_ = loc;
+}
+
+void rpgclass::setstanima(int stan) {
+	stanima_ = stan;
+}
+
+void rpgclass::setrotation(int spin) {
+	rotation_ = spin;
+}
+
 void rpgclass::setweapon(weapon w) {
 	//dropweapon();
     charweapon_.setname(w.getname());
@@ -250,6 +270,10 @@ bool rpgclass::getstate(state st) {
 
 void rpgclass::sleep() {
 	health_ += 10;
+}
+
+void rpgclass::walk(world w) {
+	w.move(rotation_, *this);
 }
 
 void rpgclass::attack(rpgclass& target) {
