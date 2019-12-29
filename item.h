@@ -1,6 +1,7 @@
 #pragma once 
 
 #include <string>
+#include "location.h"
 
 class item {
 public:
@@ -24,4 +25,6 @@ private:
     std::string description_;
     int value_;
 	int weight_;
+    bool held_;
+    location* location_;
 };
