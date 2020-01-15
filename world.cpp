@@ -22,13 +22,13 @@ bool world::move(int dir, rpgclass you)
 {
 	location* loc = you.getlocation();
 	location* newloc = nullptr;
-	int index = you.getoccindex;
+	int index = you.getoccindex();
 
 	switch (dir) {
 	case 1: 
 		if ((loc - origin_) % 101 != 0) {
 			newloc = loc - 1;
-			if (newloc->ispassibleground == true) {
+			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
 				loc->removeoccupier(index);
@@ -40,7 +40,7 @@ bool world::move(int dir, rpgclass you)
 	case 2:
 		if (loc - origin_ > 100) {
 			newloc = loc - 100;
-			if (newloc->ispassibleground == true) {
+			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
 				loc->removeoccupier(index);
@@ -52,7 +52,7 @@ bool world::move(int dir, rpgclass you)
 	case 3:
 		if ((loc - origin_) % 100 != 0) {
 			newloc = loc + 1;
-			if (newloc->ispassibleground == true) {
+			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
 				loc->removeoccupier(index);
@@ -64,7 +64,7 @@ bool world::move(int dir, rpgclass you)
 	case 4:
 		if ((loc - origin_) <= 9900) {
 			newloc = loc + 100;
-			if (newloc->ispassibleground == true) {
+			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
 				loc->removeoccupier(index);
