@@ -30,4 +30,5 @@ public:
 	void saveworld(std::string filepath);
 	bool move(int dir, rpgclass you);
 	void changeloc(location& oldloc, location& newloc);
+    void addcharacter(rpgclass character, int x, int y);
 };

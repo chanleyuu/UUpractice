@@ -24,6 +24,7 @@ bool world::move(int dir, rpgclass you)
 	location* newloc = nullptr;
 	int index = you.getoccindex();
 
+    //Switch case in based on direction
 	switch (dir) {
 	case 1: 
 		if ((loc - origin_) % 101 != 0) {
@@ -151,4 +152,13 @@ void world::saveworld(std::string filepath) {
         
     }
 	worldfile.close();
+}
+
+void world::addcharacter(rpgclass character, int x, int y) {
+    
+    if (x < this-> X_ && y < this-> Y_) {
+        if (loco_[y][x].getoccupier() == 0) {
+            loco_[y][x].setoccupier(location::player);
+        }
+    }
 }

@@ -17,7 +17,7 @@ public:
 
 	std::string getoccupiers() const;
 
-	occupier getoccupier(int index) const;
+	occupier getoccupier() const;
 
 	void setoccupier(int occ);
 
@@ -35,7 +35,10 @@ public:
 	bool ispassibleair();
 
 private:
-	std::vector<occupier> occ_;
+    int xlocation;
+    int ylocation;
+    
+	occupier occ_;
 	type tp_;
 	//bool passabletoground;
 	//bool passibletofly;

@@ -72,7 +72,6 @@ public:
 	void setstanima(int stan);
 	void setrotation(int spin);
 	void setoccindex(int index);
-	void setrace(race r);
 
 	virtual void attack(rpgclass& target);
 	virtual void sleep();
