@@ -1,6 +1,6 @@
 #include "location.h"
 
-location::location() : tp_{ type::ground } {
+location::location() : occ_{ occupier::empty }, tp_{ type::ground } {
 
 }
 
@@ -8,7 +8,7 @@ location::location(occupier occ, type tp) : occ_{ occ }, tp_{ tp } {
 
 }
 
-occupier location::getoccupier(int index) const {
+location::occupier location::getoccupier(int index) const {
 	return occ_[index];
 }
 
@@ -25,7 +25,7 @@ void location::setoccupier(std::string occ) {
 }
 
 std::string location::getoccupiers() const {
-	std::string out = std::to_string((int) occ_[0]);
+	std::string out = std::to_string(occ_[0]);
 	for (int i = 1; i < occ_.size(); i++) {
 		//while ((int)occ_[i] >= pow)
 		//	pow *= 10;

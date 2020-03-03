@@ -5,15 +5,12 @@
 
 //#include "world.h"
 
-enum class occupier { empty, item, chest, vegetation, rock, wall, npc, player, tree, flyingplayer, portal };
-
-enum class type { ground, air, water };
-
 class location
 {
 public:
-	
+	enum occupier { empty, item, chest, vegetation, rock, wall, npc, player, tree, flyingplayer, portal };
 
+	enum type { ground, air, water };
 	location();
 
 	location(occupier occ, type tp);
