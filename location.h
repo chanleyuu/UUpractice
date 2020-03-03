@@ -10,6 +10,8 @@ class location
 public:
 	enum occupier { empty, item, chest, vegetation, rock, wall, npc, player, tree, flyingplayer, portal };
 
+    enum smallocc { none, weapon, ditem, chair, candle, lamp };
+    
 	enum type { ground, air, water };
 	location();
 
@@ -18,14 +20,22 @@ public:
 	std::string getoccupiers() const;
 
 	occupier getoccupier() const;
+    
+    void setoccupier(occupier occ);
 
-	void setoccupier(int occ);
+    smallocc getsmalloccupier(int index) const;
+    
+	void setsmalloccupier(int occ);
 
-	void setoccupier(std::string occ);
+	void setsmalloccupier(std::string occ);
 
-	void removeoccupier(int index);
+	void removesmalloccupier(int index);
 
-	int addoccupier(occupier occ);
+	int addsmalloccupier(smallocc socc);
+    
+    int getxlocation();
+    
+    int getylocation();
 
 	location::type gettype() const;
 	void settype(type tp);
@@ -38,6 +48,7 @@ private:
     int xlocation;
     int ylocation;
     
+    std::vector<smallocc> smallocc_;
 	occupier occ_;
 	type tp_;
 	//bool passabletoground;

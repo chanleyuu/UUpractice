@@ -8,16 +8,21 @@ location::location(occupier occ, type tp) : occ_{ occ }, tp_{ tp } {
 
 }
 
-location::occupier location::getoccupier(int index) const {
-	return occ_[index];
+void location::setoccupier(location::occupier occ) {
+    occ_ = occ;
 }
 
-void location::setoccupier(std::string occ) {
+
+location::occupier location::getoccupier() const {
+	return occ_;
+}
+
+void location::setsmalloccupier(std::string occ) {
 	int begin = 0;
 	int current = occ.find('|');
 
 	while (current != std::string::npos) {
-		occ_.push_back((occupier)std::stoi(occ.substr(begin, current - 1)));
+		smallocc_.push_back((occupier)std::stoi(occ.substr(begin, current - 1)));
 		begin = current;
 		current = occ.find('|', begin);
 	}
@@ -25,23 +30,23 @@ void location::setoccupier(std::string occ) {
 }
 
 std::string location::getoccupiers() const {
-	std::string out = std::to_string(occ_[0]);
-	for (int i = 1; i < occ_.size(); i++) {
+	std::string out = std::to_string(smallocc_[0]);
+	for (int i = 1; i < smallocc_.size(); i++) {
 		//while ((int)occ_[i] >= pow)
 		//	pow *= 10;
-		out = out + std::to_string(occ_[0]) + "|";
+		out = out + std::to_string(smallocc_[0]) + "|";
 	}
 	return out;
 }
 
-int location::addoccupier(occupier occ) {
+int location::addsmalloccupier(smallocc socc) {
 	//returns index of occupier
-	occ_.push_back(occ);
-	return occ_.size();
+	smallocc_.push_back(socc);
+	return smallocc_.size();
 }
 
-void location::removeoccupier(int index) {
-	occ_.erase(occ_.begin() + index);
+void location::removesmalloccupier(int index) {
+	smallocc_.erase(smallocc_.begin() + index);
 }
 
 location::type location::gettype() const {
@@ -54,19 +59,19 @@ void location::settype(type tp) {
 
 bool location::ispassibleground() {
 
-	for (int i = 0; i < occ_.size(); i++) {
-		if (occ_[i] == empty || occ_[i] == item || occ_[i] == vegetation || occ_[i] == flyingplayer) {
-			return true;
-		}
-	}
+//	for (int i = 0; i < occ_.size(); i++) {
+    if (occ_ == empty || occ_ == item || occ_ == vegetation) {
+        return true;
+    }
+	//}
 	return false;
 }
 
 bool location::ispassibleair() {
-	for (int i = 0; i < occ_.size(); i++) {
-		if (occ_[i] == wall || occ_[i] == tree || occ_[i] == flyingplayer) {
-			return false;
-		}
-	}
+	//for (int i = 0; i < occ_.size(); i++) {
+    if (occ_ == wall || occ_ == tree || occ_ == flyingplayer) {
+        return false;
+    }
+	//}
 	return true;
 }
