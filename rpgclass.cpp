@@ -182,8 +182,8 @@ void rpgclass::setrace(race rrace) {
 	thisrace_ = rrace;
 }
 
-void rpgclass::setlocation(location* loc) {
-	*location_ = *loc;
+void rpgclass::setlocation(location &loc) {
+	*location_ = loc;
 }
 
 void rpgclass::setfaith(int faith) {
@@ -218,9 +218,6 @@ void rpgclass::setendurance(int end) {
 	endurance_ = end;
 }
 
-void rpgclass::setlocation(location* loc) {
-	location_ = loc;
-}
 
 void rpgclass::setstanima(int stan) {
 	stanima_ = stan;

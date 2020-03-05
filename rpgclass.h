@@ -61,14 +61,13 @@ public:
 	void addspell();
 	void setrace(race rrace);
 	void setstate(state st);
-    void setlocation(location* loc);
 	void setfaith(int faith);
 	void setexp(int exp);
 	void setstregnth(int strength);
 	void setinelligence(int intel);
 	void setdexterity(int dex);
 	void setendurance(int end);
-	void setlocation(int &loc);
+	void setlocation(location &loc);
 	void setstanima(int stan);
 	void setrotation(int spin);
 	void setoccindex(int index);

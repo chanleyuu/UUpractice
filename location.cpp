@@ -22,7 +22,7 @@ void location::setsmalloccupier(std::string occ) {
 	int current = occ.find('|');
 
 	while (current != std::string::npos) {
-		smallocc_.push_back((occupier)std::stoi(occ.substr(begin, current - 1)));
+		smallocc_.push_back((smallocc)std::stoi(occ.substr(begin, current - 1)));
 		begin = current;
 		current = occ.find('|', begin);
 	}
