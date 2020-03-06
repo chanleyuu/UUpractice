@@ -15,7 +15,7 @@ item::item(std::string name, std::string desc, int value) :
 std::string item::getname() const {
     return name_;
 }
- 
+
 std::string item::getdescription() const {
     return description_;
 }
@@ -26,6 +26,10 @@ int item::getvalue() const {
 
 int item::getweight() const {
 	return weight_;
+}
+
+location* item::getlocation() const{
+    return location_;
 }
 
 void item::setname(std::string name) {
@@ -42,6 +46,10 @@ void item::setvalue(int value) {
 
 void item::setweight(int weight) {
 	weight_ = weight;
+}
+
+void item::setlocation(location* loc){
+    location_ = loc;
 }
 
 std::string item::tostring() {
