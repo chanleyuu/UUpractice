@@ -1,18 +1,29 @@
 #include "world.h"
 
 world::world() : X_{ 100 }, Y_ { 100 }  {
-	squares_.resize(X_);
+
 	for (int i = 0; i < Y_; i++) {
+        for (int e = 0; e < X_; e++){
+            location L(location::occupier empty,location::type ground);
+            squares_.push_back(L);
+        }
 		loco_.push_back(squares_);
+		squares_.clear();
 	}
 
 }
 
 
 world::world(int x, int y) : X_{ x }, Y_{ y }  {
-	squares_.resize(X_);
+	//squares_.resize(X_);
+
 	for (int i = 0; i < Y_; i++) {
+        for (int e = 0; e < X_; e++){
+            location L(location::occupier empty,location::type ground);
+            squares_.push_back(L);
+        }
 		loco_.push_back(squares_);
+		squares_.clear();
 	}
 
 }
@@ -26,51 +37,51 @@ bool world::move(int dir, rpgclass you)
 
     //Switch case in based on direction
 	switch (dir) {
-	case 1: 
-		if ((loc - origin_) % 101 != 0) {
+	case 1:
+		if ((loc - origin_) % X_ + 1 != 0) {
 			newloc = loc - 1;
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->removeoccupier(index);
-				index = newloc->addoccupier(location::player);
-				you.setoccindex(index);
+				loc->setoccupier(empty);
+				newloc->setoccupier(player);
+				//you.setoccindex(index);
 			}
 		}
 		break;
 	case 2:
-		if (loc - origin_ > 100) {
-			newloc = loc - 100;
+		if (loc - origin_ > X_) {
+			newloc = loc - X_;
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->removeoccupier(index);
-				index = newloc->addoccupier(location::player);
-				you.setoccindex(index);
+				loc->setoccupier(empty);
+				newloc->setoccupier(player);
+				//you.setoccindex(index);
 			}
 		}
 		break;
 	case 3:
-		if ((loc - origin_) % 100 != 0) {
+		if ((loc - origin_) % X_ != 0) {
 			newloc = loc + 1;
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->removeoccupier(index);
-				index = newloc->addoccupier(location::player);
-				you.setoccindex(index);
+				loc->setoccupier(empty);
+				newloc->setoccupier(player);
+				//you.setoccindex(index);
 			}
 		}
 		break;
 	case 4:
-		if ((loc - origin_) <= 9900) {
+		if ((loc - origin_) <= X_ * Y_ - X_) {
 			newloc = loc + 100;
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->removeoccupier(index);
-				index = newloc->addoccupier(location::player);
-				you.setoccindex(index);
+				loc->setoccupier(empty);
+				newloc->setoccupier(player);
+				//you.setoccindex(index);
 			}
 		}
 		break;
@@ -102,7 +113,7 @@ world::world(std::string filepath) {
 
 	std::getline(worldfile, temp);
 	X_ = std::stoi(temp);
-	
+
 	std::getline(worldfile, temp);
 	Y_ = std::stoi(temp);
 
@@ -129,17 +140,17 @@ world::world(std::string filepath) {
 
 void world::saveworld(std::string filepath) {
     std::ofstream worldfile{ filepath, std::ios::out };
-    
+
     if (!worldfile) {
 		exit(EXIT_FAILURE);
 	}
-	
-	
+
+
 	if (worldfile.is_open()){
-        
+
         worldfile << X_ << std::endl;
         worldfile << Y_ << std::endl;
-        
+
         for (int i = 0; i < loco_.size(); i++) {
             for (int e = 0; e < loco_[i].size(); e++){
 				worldfile << loco_[i][e].getoccupiers();
@@ -149,13 +160,13 @@ void world::saveworld(std::string filepath) {
             }
 			worldfile << "\n";
         }
-        
+
     }
 	worldfile.close();
 }
 
 void world::addcharacter(rpgclass character, int x, int y) {
-    
+
     if (x < this-> X_ && y < this-> Y_) {
         if (loco_[y][x].getoccupier() == 0) {
             loco_[y][x].setoccupier(location::player);

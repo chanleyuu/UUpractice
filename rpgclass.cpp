@@ -16,7 +16,9 @@ rpgclass::rpgclass(std::string name, int health, int maxhealth, int level, race 
     this->health_ = health;
     this->maxhealth_ = maxhealth;
     this->level_ = level;
-	weapon fist;
+	weapon fist("Fist", "Bare Hands", 0, weapon::weapontype Fist, 1.2f, 1,
+		1, 0, -1);
+    this->setweapon(fist);
 }
 
 rpgclass::~rpgclass()
@@ -67,7 +69,7 @@ int rpgclass::getendurance() const {
 }
 
 location* rpgclass::getlocation() {
-	
+
 	return location_;
 }
 
@@ -242,6 +244,8 @@ void rpgclass::dropweapon(world w) {
 	/*
 	"Some code placing weapon in game world"
 	*/
+	location* loc = this->getlocation();
+
 	charweapon_.setname("Fists");
 	charweapon_.settype(weapon::Fist);
 	charweapon_.setdamage(1.0);
@@ -249,12 +253,14 @@ void rpgclass::dropweapon(world w) {
 	charweapon_.setrange(0);
 	charweapon_.setweight(0);
 	charweapon_.setdurability(-1);
+
+	&loc.addsmalloccupier(location::smallocc_ weapon);
 }
 
 void rpgclass::setstate(state st) {
 	if (thisstate_[st] == false) {
 		thisstate_[st] = true;
-	} 
+	}
 	else {
 		thisstate_[st] = false;
 	}

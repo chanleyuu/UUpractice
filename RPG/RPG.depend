@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1574772281 source:c:\users\kevin\desktop\rpg\main.cpp
+	<iostream>
+	"rpgclass.h"
+	"item.h"
+	"weapon.h"
+
+1583477224 c:\users\kevin\desktop\rpg\rpgclass.h
+	<string>
+	<vector>
+	"weapon.h"
+	"item.h"
+	"armour.h"
+	"world.h"
+	"location.h"
+
+1574266754 c:\users\kevin\desktop\rpg\weapon.h
+	<string>
+	"item.h"
+
+1582645976 c:\users\kevin\desktop\rpg\item.h
+	<string>
+	"location.h"
+
+1583477286 c:\users\kevin\desktop\rpg\location.h
+	<string>
+	<vector>
+
+1574772281 c:\users\kevin\desktop\rpg\armour.h
+	<string>
+
+1582645976 c:\users\kevin\desktop\rpg\world.h
+	<string>
+	<fstream>
+	<vector>
+	<iostream>
+	"rpgclass.h"
+	"location.h"
+

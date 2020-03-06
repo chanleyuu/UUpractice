@@ -17,11 +17,11 @@ public:
 	enum race { Orc, Elf, Undead, Ogre, Human, Demon, Zorbgnak, Scavenger, Dwarf, Witch };
 	const std::vector<std::string> racenames{ "Orc", "Elf", "Undead", "Ogre", "Human", "Demon", "Zorbgnak", "Scavenger", "Dwarf", "Witch" };
 
-    rpgclass(); //Default Constructor 
+    rpgclass(); //Default Constructor
     rpgclass(std::string name, int health, int maxhealth, int level, race rrace);
-    
+
     ~rpgclass();
-    
+
     std::string getname() const;
     std::string getclass() const;
 	std::string getracename() const;
@@ -41,10 +41,10 @@ public:
 
 	float gettotalarmour();
     weapon charweapon_;
-    
+
     int getvalue(std::string name) const;
     std::string getdescription(std::string name) const;
-    
+
     void additem(std::string name);
     void removeitem(std::string name);
 
@@ -56,7 +56,7 @@ public:
     void setlevel(int level);
     void setmaxhealth(int maxhealth);
     void setweapon(weapon w);
-	void dropweapon(world w);
+	void dropweapon();
 	void eat(item food);
 	void addspell();
 	void setrace(race rrace);
@@ -67,7 +67,7 @@ public:
 	void setinelligence(int intel);
 	void setdexterity(int dex);
 	void setendurance(int end);
-	void setlocation(location &loc);
+	void setlocation(location *loc);
 	void setstanima(int stan);
 	void setrotation(int spin);
 	void setoccindex(int index);
@@ -80,10 +80,10 @@ public:
 
 	float genrand(float min, float max);
 
-	
+
 
 private:
-	
+
 	race thisrace_;
 	bool thisstate_[11];
 
@@ -102,7 +102,7 @@ private:
 	int stanima_;
     std::vector<item> inventory_;
 	std::vector<armour> armour_;
-    
+
 	int occindex_;
     location* location_;
     int rotation_;
