@@ -165,12 +165,12 @@ void world::saveworld(std::string filepath) {
 	worldfile.close();
 }
 
-void world::addcharacter(rpgclass character, int x, int y) {
+void world::addcharactertoworld(rpgclass character, int x, int y) {
 
     if (x < this-> X_ && y < this-> Y_) {
         if (loco_[y][x].getoccupier() == 0) {
             loco_[y][x].setoccupier(location::player);
-            character.setlocation(loco_[y][x]);
+            character.setlocation(&loco_[y][x]);
         }
     }
 }

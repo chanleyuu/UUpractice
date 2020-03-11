@@ -35,6 +35,8 @@ int main(int argc, char** argv) {
 	simple.setrange(3);
 	me.setname("Harold");
 	me.setweapon(simple);
+    
+    
 	std::cout << "Hello, " << me.getname() << std::endl;
 	
 

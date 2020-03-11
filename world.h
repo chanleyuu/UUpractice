@@ -16,6 +16,7 @@ private:
 	int Y_;
 	std::vector< std::vector<location> > loco_ ;
 	std::vector<location> squares_;
+    std::vector<rpgclass> characters_;
 	//std::vector<std::vector<location>> map_;
 	location* origin_ = &loco_[0][0];
 	std::vector<int> ID;
@@ -30,5 +31,6 @@ public:
 	void saveworld(std::string filepath);
 	bool move(int dir, rpgclass you);
 	void changeloc(location& oldloc, location& newloc);
-    void addcharacter(rpgclass character, int x, int y);
+    void addcharactertoworld(rpgclass character, int x, int y);
+    void addcharacter(rpgclass )
 };
