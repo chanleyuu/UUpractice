@@ -161,6 +161,8 @@ void world::saveworld(std::string filepath) {
 			worldfile << "\n";
         }
 
+        
+        for (int i = 0; i < loco_.size(); i++)
     }
 	worldfile.close();
 }
