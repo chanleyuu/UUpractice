@@ -30,6 +30,10 @@ public:
 	void setsmalloccupier(std::string occ);
 
 	void removesmalloccupier(int index);
+        
+    void setxlocation(int xloc);
+    
+    void setylocation(int yloc);
 
 	int addsmalloccupier(smallocc socc);
     
@@ -38,6 +42,7 @@ public:
     int getylocation();
 
 	location::type gettype() const;
+    
 	void settype(type tp);
 
 	bool ispassibleground();
@@ -45,8 +50,8 @@ public:
 	bool ispassibleair();
 
 private:
-    int xlocation;
-    int ylocation;
+    int xlocation_;
+    int ylocation_;
     
     std::vector<smallocc> smallocc_;
 	occupier occ_;

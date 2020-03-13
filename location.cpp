@@ -75,3 +75,13 @@ bool location::ispassibleair() {
 	//}
 	return true;
 }
+
+int location::getxlocation()
+{
+    return xlocation_;
+}
+
+int location::getylocation()
+{
+    return ylocation_;
+}

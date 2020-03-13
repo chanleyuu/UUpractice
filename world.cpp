@@ -176,3 +176,8 @@ void world::addcharactertoworld(rpgclass character, int x, int y) {
         }
     }
 }
+
+std::vector<int> world::getlocations(location* loc, int index) {
+    
+}
+
