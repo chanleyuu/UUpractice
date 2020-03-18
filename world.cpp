@@ -4,7 +4,7 @@ world::world() : X_{ 100 }, Y_ { 100 }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(location::occupier empty,location::type ground);
+            location L(location::occupier empty,location::type ground, e, i);
             squares_.push_back(L);
         }
 		loco_.push_back(squares_);
@@ -19,7 +19,7 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(location::occupier empty,location::type ground);
+            location L(location::occupier empty,location::type ground, e, i);
             squares_.push_back(L);
         }
 		loco_.push_back(squares_);
@@ -129,7 +129,7 @@ world::world(std::string filepath) {
 				num1 = std::stoi(temp);
 				std::getline(worldfile, temp, ',');
 				num2 = std::stoi(temp);
-				loco_[e].push_back(location((location::occupier)num1, (location::type) num2));
+				loco_[e].push_back(location((location::occupier)num1, (location::type) num2, i, e));
 			}
 		}
 
@@ -178,6 +178,8 @@ void world::addcharactertoworld(rpgclass character, int x, int y) {
 }
 
 std::vector<int> world::getlocations(location* loc, int index) {
+    std::vector<int> out;
     
+    return 
 }
 

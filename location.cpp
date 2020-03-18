@@ -4,7 +4,8 @@ location::location() : occ_{ occupier::empty }, tp_{ type::ground } {
 
 }
 
-location::location(occupier occ, type tp) : occ_{ occ }, tp_{ tp } {
+location::location(occupier occ, type tp, int locx, int locy) : occ_{ occ }, tp_{ tp }, xlocation_{ locx }, 
+ylocation_{locy} {
 
 }
 
@@ -55,6 +56,16 @@ location::type location::gettype() const {
 
 void location::settype(type tp) {
 	tp_ = tp;
+}
+
+void location::setxlocation(int locx)
+{
+    xlocation_ = locx;
+}
+
+void location::setylocation(int locy)
+{
+    ylocation_ = locy;
 }
 
 bool location::ispassibleground() {
