@@ -240,12 +240,13 @@ void rpgclass::setweapon(weapon w) {
     charweapon_.setdurability(w.getdurability());
 }
 
-void rpgclass::dropweapon(world w) {
+void rpgclass::dropweapon() {
 	/*
 	"Some code placing weapon in game world"
 	*/
 	location* loc = this->getlocation();
-
+    charweapon_.setlocation(loc);
+    
 	charweapon_.setname("Fists");
 	charweapon_.settype(weapon::Fist);
 	charweapon_.setdamage(1.0);
@@ -254,7 +255,7 @@ void rpgclass::dropweapon(world w) {
 	charweapon_.setweight(0);
 	charweapon_.setdurability(-1);
 
-	&loc.addsmalloccupier(location::smallocc_ weapon);
+	;
 }
 
 void rpgclass::setstate(state st) {
