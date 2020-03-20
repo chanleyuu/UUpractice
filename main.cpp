@@ -1,5 +1,7 @@
 #include <iostream>
 //#include <random>
+#include "world.h"
+#include "location.h"
 #include "rpgclass.h"
 #include "item.h"
 #include "weapon.h"

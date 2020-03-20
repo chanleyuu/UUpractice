@@ -4,7 +4,9 @@ world::world() : X_{ 100 }, Y_ { 100 }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(location::occupier empty,location::type ground, e, i);
+            location L(e, i);
+            L.settype(location::ground);
+            L.setoccupier(location::empty);
             squares_.push_back(L);
         }
 		loco_.push_back(squares_);
@@ -19,7 +21,9 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(location::occupier empty,location::type ground, e, i);
+            location L(e, i);
+            L.settype(location::ground);
+            L.setoccupier(location::empty);
             squares_.push_back(L);
         }
 		loco_.push_back(squares_);
@@ -43,8 +47,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(empty);
-				newloc->setoccupier(player);
+				loc->setoccupier(location::empty);
+				newloc->setoccupier(location::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -55,8 +59,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(empty);
-				newloc->setoccupier(player);
+				loc->setoccupier(location::empty);
+				newloc->setoccupier(location::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -67,8 +71,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(empty);
-				newloc->setoccupier(player);
+				loc->setoccupier(location::empty);
+				newloc->setoccupier(location::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -79,8 +83,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(empty);
-				newloc->setoccupier(player);
+				loc->setoccupier(location::empty);
+				newloc->setoccupier(location::player);
 				//you.setoccindex(index);
 			}
 		}

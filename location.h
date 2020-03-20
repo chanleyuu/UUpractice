@@ -15,7 +15,7 @@ public:
 	enum type { ground, air, water };
 	location();
 
-	location(occupier occ, type tp, int xloc, int yloc);
+    location( int locx, int locy);
 
 	std::string getoccupiers() const;
 

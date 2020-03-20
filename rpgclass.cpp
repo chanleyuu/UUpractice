@@ -16,7 +16,7 @@ rpgclass::rpgclass(std::string name, int health, int maxhealth, int level, race 
     this->health_ = health;
     this->maxhealth_ = maxhealth;
     this->level_ = level;
-	weapon fist("Fist", "Bare Hands", 0, weapon::weapontype Fist, 1.2f, 1,
+	weapon fist("Fist", "Bare Hands", 0, (weapon::weapontype) 6, 1.2f, 1,
 		1, 0, -1);
     this->setweapon(fist);
 }
@@ -184,8 +184,8 @@ void rpgclass::setrace(race rrace) {
 	thisrace_ = rrace;
 }
 
-void rpgclass::setlocation(location &loc) {
-	*location_ = loc;
+void rpgclass::setlocation(location *loc) {
+	location_ = loc;
 }
 
 void rpgclass::setfaith(int faith) {
