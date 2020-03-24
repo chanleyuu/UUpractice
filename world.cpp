@@ -166,7 +166,9 @@ void world::saveworld(std::string filepath) {
         }
 
         
-        for (int i = 0; i < loco_.size(); i++)
+        for (int i = 0; i < loco_.size(); i++) {
+            
+        }
     }
 	worldfile.close();
 }
@@ -181,9 +183,12 @@ void world::addcharactertoworld(rpgclass character, int x, int y) {
     }
 }
 
-std::vector<int> world::getlocations(location* loc, int index) {
+/*
+std::vector<int> world::getlocations(location* loc) {
     std::vector<int> out;
+    out.push_back(loc->getxlocation());
+    out.push_back(loc->getylocation());
     
-    return 
-}
+    return out;
+} */
 
