@@ -3,11 +3,13 @@
 #include <string>
 #include <vector>
 
+#include "world.h"
 #include "weapon.h"
 #include "item.h"
 #include "armour.h"
-#include "world.h"
 #include "location.h"
+
+class world;
 
 class rpgclass {
 public:
@@ -38,6 +40,7 @@ public:
 	int getrotation() const;
 	int getoccindex() const;
 	race getrace() const;
+    world* getworld() const;
 
 	float gettotalarmour();
     weapon charweapon_;
@@ -71,11 +74,12 @@ public:
 	void setstanima(int stan);
 	void setrotation(int spin);
 	void setoccindex(int index);
+    void setworld(world* w);
 
 	virtual void attack(rpgclass& target);
 	virtual void sleep();
 	void defend();
-	void walk(world w);
+	void walk();
 	bool getstate(state st);
 
 	float genrand(float min, float max);
@@ -105,5 +109,6 @@ private:
 
 	int occindex_;
     location* location_;
+    world* world_;
     int rotation_;
 };

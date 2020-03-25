@@ -9,14 +9,16 @@ enum class occupier { empty, item, chest, vegetation, rock, wall, npc, player, t
 
 enum class smallocc { none, weapon, ditem, chair, candle, lamp };
 
+enum class type { ground, air, water };
+
 class location
 {
 public:
     
-	enum type { ground, air, water };
+	
 	location();
 
-    location( int locx, int locy);
+    location(occupier occ, type tp, int locx, int locy);
 
 	std::string getoccupiers() const;
 
@@ -42,7 +44,7 @@ public:
     
     int getylocation();
 
-	location::type gettype() const;
+	type gettype() const;
     
 	void settype(type tp);
 

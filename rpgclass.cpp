@@ -100,6 +100,12 @@ float rpgclass::gettotalarmour() {
 int rpgclass::getoccindex() const {
 	return occindex_;
 }
+
+world* rpgclass::getworld() const
+{
+    return world_;
+} 
+
 ////////////////////////////////////////////////////////////////////
 
 void rpgclass::additem(std::string name) {
@@ -229,6 +235,12 @@ void rpgclass::setrotation(int spin) {
 	rotation_ = spin;
 }
 
+void rpgclass::setworld(world* w)
+{
+    world_ = w;
+}
+
+
 void rpgclass::setweapon(weapon w) {
 	//dropweapon();
     charweapon_.setname(w.getname());
@@ -276,8 +288,8 @@ void rpgclass::sleep() {
 	health_ += 10;
 }
 
-void rpgclass::walk(world w) {
-	w.move(rotation_, *this);
+void rpgclass::walk() {
+	this->getworld()->move(rotation_, *this);
 }
 
 void rpgclass::attack(rpgclass& target) {

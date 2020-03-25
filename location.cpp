@@ -4,7 +4,7 @@ location::location() : occ_{ occupier::empty }, tp_{ type::ground } {
 
 }
 
-location::location( int locx, int locy) :  xlocation_{ locx }, 
+location::location(occupier occ, type tp, int locx, int locy) : occ_{ occ }, tp_{ tp },xlocation_{ locx }, 
 ylocation_{locy} {
 
 }

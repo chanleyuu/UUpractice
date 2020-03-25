@@ -39,7 +39,7 @@ private:
     weapontype type_;
     float damage_;
     int level_;
-    int weight_;
     int range_;
+    int weight_;
     int durability_;
 };

@@ -1,2 +1,2 @@
 default:
-	g++ -g -o lololololk main.cpp location.cpp world.cpp rpgclass.cpp weapon.cpp item.cpp armour.cpp
+	g++ -g -o lololololk main.cpp world.cpp location.cpp rpgclass.cpp weapon.cpp item.cpp armour.cpp

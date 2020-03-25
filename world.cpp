@@ -4,9 +4,7 @@ world::world() : X_{ 100 }, Y_ { 100 }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(e, i);
-            L.settype(location::ground);
-            L.setoccupier(location::empty);
+            location L(occupier::empty, type::ground, e, i);
             squares_.push_back(L);
         }
 		loco_.push_back(squares_);
@@ -21,9 +19,7 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(e, i);
-            L.settype(location::ground);
-            L.setoccupier(location::empty);
+            location L(occupier::empty, type::ground, e, i);
             squares_.push_back(L);
         }
 		loco_.push_back(squares_);
@@ -47,8 +43,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(location::empty);
-				newloc->setoccupier(location::player);
+				loc->setoccupier(occupier::empty);
+				newloc->setoccupier(type::player);
 				//you.setoccindex(index);
 			}
 		}
