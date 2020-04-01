@@ -51,7 +51,7 @@ void location::removesmalloccupier(int index) {
 	smallocc_.erase(smallocc_.begin() + index);
 }
 
-location::type location::gettype() const {
+type location::gettype() const {
 	return tp_;
 }
 

@@ -44,7 +44,7 @@ bool world::move(int dir, rpgclass you)
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
 				loc->setoccupier(occupier::empty);
-				newloc->setoccupier(type::player);
+				newloc->setoccupier(occupier::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -55,8 +55,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(location::empty);
-				newloc->setoccupier(location::player);
+				loc->setoccupier(occupier::empty);
+				newloc->setoccupier(occupier::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -67,8 +67,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(location::empty);
-				newloc->setoccupier(location::player);
+				loc->setoccupier(occupier::empty);
+				newloc->setoccupier(occupier::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -79,8 +79,8 @@ bool world::move(int dir, rpgclass you)
 			if (newloc->ispassibleground() == true) {
 				changeloc(*loc, *newloc);
 				you.setlocation(newloc);
-				loc->setoccupier(location::empty);
-				newloc->setoccupier(location::player);
+				loc->setoccupier(occupier::empty);
+				newloc->setoccupier(occupier::player);
 				//you.setoccindex(index);
 			}
 		}
@@ -99,8 +99,8 @@ bool world::move(int dir, rpgclass you)
 }
 
 void world::changeloc(location& oldloc, location& newloc) {
-	oldloc.setoccupier(location::occupier::empty);
-	newloc.setoccupier(location::occupier::player);
+	oldloc.setoccupier(occupier::empty);
+	newloc.setoccupier(occupier::player);
 }
 
 world::world(std::string filepath) {
@@ -129,7 +129,7 @@ world::world(std::string filepath) {
 				num1 = std::stoi(temp);
 				std::getline(worldfile, temp, ',');
 				num2 = std::stoi(temp);
-				loco_[e].push_back(location((location::occupier)num1, (location::type) num2, i, e));
+				loco_[e].push_back(location((occupier)num1, (type) num2, i, e));
 			}
 		}
 
@@ -155,7 +155,7 @@ void world::saveworld(std::string filepath) {
             for (int e = 0; e < loco_[i].size(); e++){
 				worldfile << loco_[i][e].getoccupiers();
 				worldfile << ",";
-				worldfile << loco_[i][e].gettype();
+				worldfile << (int) loco_[i][e].gettype();
 				worldfile << ",";
             }
 			worldfile << "\n";
@@ -172,8 +172,8 @@ void world::saveworld(std::string filepath) {
 void world::addcharactertoworld(rpgclass character, int x, int y) {
 
     if (x < this-> X_ && y < this-> Y_) {
-        if (loco_[y][x].getoccupier() == 0) {
-            loco_[y][x].setoccupier(location::player);
+        if (loco_[y][x].getoccupier() == occupier::empty) {
+            loco_[y][x].setoccupier(occupier::player);
             character.setlocation(&loco_[y][x]);
         }
     }
