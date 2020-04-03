@@ -24,6 +24,7 @@ rpgclass::rpgclass(std::string name, int health, int maxhealth, int level, race 
 rpgclass::~rpgclass()
 {
     delete location_;
+    delete world_;
 }
 
 
