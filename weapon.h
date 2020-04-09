@@ -4,11 +4,13 @@
 #include "item.h"
 
 
+enum class weapontype { Longsword, Bastardsword, Spear, Mace, Bow, Staff, Fist };
+
 class weapon :
 		public item {
 public:
     
-    enum weapontype { Longsword, Bastardsword, Spear, Mace, Bow, Staff, Fist };
+    
     
     weapon();// Constructor
     

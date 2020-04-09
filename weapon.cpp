@@ -20,7 +20,7 @@ std::string weapon::getname() const {
     return name_;
 } */
 
-weapon::weapontype weapon::gettype() const {
+weapontype weapon::gettype() const {
     return type_;
 }
 
@@ -77,17 +77,17 @@ void weapon::setdurability(int durability) {
 std::string weapon::tostring(){
 	std::string type;
 	switch (type_) {
-	case 0: type = "Longsword";
+	case weapontype::Longsword: type = "Longsword";
 		break;
-	case 1: type = "Bastardsword";
+    case weapontype::Bastardsword: type = "Bastardsword";
 		break;
-	case 2: type = "Spear";
+	case weapontype::Spear: type = "Spear";
 		break;
-	case 3: type = "Mace";
+	case weapontype::Mace: type = "Mace";
 		break;
-	case 4: type = "Bow";
+	case weapontype::Bow: type = "Bow";
 		break;
-	case 5: type = "Staff";
+	case weapontype::Staff: type = "Staff";
 		break;
 	case 6: type = "Fist";
 		break;
