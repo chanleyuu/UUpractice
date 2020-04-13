@@ -27,6 +27,8 @@ public:
 
 	world(std::string filepath);
 
+    ~world();//destructor 
+    
 	//void loadworld(std::string filepath);
 	void saveworld(std::string filepath);
 	bool move(int dir, rpgclass you);

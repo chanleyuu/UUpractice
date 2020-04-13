@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
 	wine.setdescription("A fine vintage.");
 	wine.setvalue(50);
 	simple.setname("Simple Staff");
-	simple.settype(weapon::Staff);
+	simple.settype(weapontype::Staff);
 	simple.setrange(3);
 	me.setname("Harold");
 	me.setweapon(simple);

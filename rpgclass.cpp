@@ -16,7 +16,7 @@ rpgclass::rpgclass(std::string name, int health, int maxhealth, int level, race 
     this->health_ = health;
     this->maxhealth_ = maxhealth;
     this->level_ = level;
-	weapon fist("Fist", "Bare Hands", 0, (weapon::weapontype) 6, 1.2f, 1,
+	weapon fist("Fist", "Bare Hands", 0, (weapontype) 6, 1.2f, 1,
 		1, 0, -1);
     this->setweapon(fist);
 }
@@ -261,7 +261,7 @@ void rpgclass::dropweapon() {
     charweapon_.setlocation(loc);
     
 	charweapon_.setname("Fists");
-	charweapon_.settype(weapon::Fist);
+	charweapon_.settype(weapontype::Fist);
 	charweapon_.setdamage(1.0);
 	charweapon_.setlevel(this->getlevel());
 	charweapon_.setrange(0);

@@ -28,6 +28,11 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 
 }
 
+world::~world() {
+    delete origin_;
+}
+
+
 
 bool world::move(int dir, rpgclass you)
 {

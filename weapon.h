@@ -14,9 +14,7 @@ public:
     
     weapon();// Constructor
     
-	weapon(std::string name, std::string desc, int value,
-		weapon::weapontype wep, float damage, int level,
-		int range, int weight, int durability);
+    weapon(std::string name, std::string desc, int value, weapontype wep, float damage, int level, int range, int weight, int durability);
 
  //   std::string getname() const;
     weapontype gettype() const;

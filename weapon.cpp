@@ -1,7 +1,7 @@
 #include "weapon.h"
 
-weapon::weapon(void) : item ("Fist", "Bare hands", 0)  {
-    settype(Fist);
+weapon::weapon() : item ("Fist", "Bare hands", 0)  {
+    settype(weapontype::Fist);
     setdamage(1.0);
     setlevel(1);
     setrange(0);
@@ -10,7 +10,7 @@ weapon::weapon(void) : item ("Fist", "Bare hands", 0)  {
 }
 
 weapon::weapon(std::string name, std::string desc, int value,
-				weapon::weapontype wep, float damage, int level,
+				weapontype wep, float damage, int level,
 				int range, int weight, int durability)  
 	: item(name, desc, value), type_{ wep }, damage_{ damage }, level_{ level }, range_{ range }, weight_{ weight }, durability_{ durability } {
 }
@@ -89,7 +89,7 @@ std::string weapon::tostring(){
 		break;
 	case weapontype::Staff: type = "Staff";
 		break;
-	case 6: type = "Fist";
+    case weapontype::Fist: type = "Fist";
 		break;
 	default: type = "Unknown";
 		break;
