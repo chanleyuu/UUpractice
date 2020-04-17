@@ -59,7 +59,7 @@ public:
     void setlevel(int level);
     void setmaxhealth(int maxhealth);
     void setweapon(weapon w);
-	void dropweapon();
+	void dropweapon(world& w);
 	void eat(item food);
 	void addspell();
 	void setrace(race rrace);

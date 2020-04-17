@@ -35,5 +35,6 @@ public:
 	void changeloc(location& oldloc, location& newloc);
     void addcharactertoworld(rpgclass character, int x, int y);
     void addcharacter(rpgclass );
+    location& getlocation(int x, int y);
    // std::vector<int> getlocations (location* loc);//This functions is needed for saving and loading.
 };

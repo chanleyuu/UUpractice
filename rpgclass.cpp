@@ -253,10 +253,14 @@ void rpgclass::setweapon(weapon w) {
     charweapon_.setdurability(w.getdurability());
 }
 
-void rpgclass::dropweapon() {
+void rpgclass::dropweapon(world& w) {
 	/*
 	"Some code placing weapon in game world"
 	*/
+    int xloc = location_->getxlocation();
+    int yloc = location_->getylocation();
+    //w.
+    
 	location* loc = this->getlocation();
     charweapon_.setlocation(loc);
     
