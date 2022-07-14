@@ -1,6 +1,6 @@
 #include "world.h"
 
-world::world() : X_{ 100 }, Y_ { 100 }  {
+world_init() : X_{ 100 }, Y_ { 100 }  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){

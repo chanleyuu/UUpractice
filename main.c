@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio>
 //#include <random>
 #include "world.h"
 #include "location.h"
@@ -25,10 +25,10 @@ void attack(rpgclass& a, rpgclass& b) {
 } */
 
 int main(int argc, char** argv) {
-	rpgclass me;
-	weapon simple;
-	item wine;
-	std::cout << simple.tostring() << std::endl;
+	struct rpgclass me;
+	struct weapon simple;
+	struct item wine;
+	printf("%s \n", simple.tostring());
 	wine.setname("Wine");
 	wine.setdescription("A fine vintage.");
 	wine.setvalue(50);
@@ -39,10 +39,10 @@ int main(int argc, char** argv) {
 	me.setweapon(simple);
     
     
-	std::cout << "Hello, " << me.getname() << std::endl;
+	printf("Hello, %s \n", me.getname());
 	
 
-    std::cout << "Oh No!" << std::endl; 
+    printf("Oh No! \n"); 
 	return 0;
 }
 

@@ -1,40 +1,42 @@
 #pragma once
 
-#include <string>
+//#include <string>
 #include <fstream>
-#include <vector>
-#include <iostream>
+//#include <vector>
+#include <stdio>
 
 #include "rpgclass.h"
 #include "location.h"
 
-class rpgclass;
+//class rpgclass;
 
-class world {
-private:
+typedef struct world {
+
 	int X_;
 	int Y_;
-	std::vector< std::vector<location> > loco_ ;
+	typedef struct loco_ ;
 	std::vector<location> squares_;
     std::vector<rpgclass> characters_;
 	//std::vector<std::vector<location>> map_;
 	location* origin_ = &loco_[0][0];
 	std::vector<int> ID;
-public:
-	world();
+	
+	//world();
 
-	world(int x, int y);
+	//world(int x, int y);
 
-	world(std::string filepath);
+	//world(std::string filepath);
 
-    ~world();//destructor 
+    //~world();//destructor 
     
 	//void loadworld(std::string filepath);
-	void saveworld(std::string filepath);
-	bool move(int dir, rpgclass you);
-	void changeloc(location& oldloc, location& newloc);
-    void addcharactertoworld(rpgclass character, int x, int y);
-    void addcharacter(rpgclass );
-    location& getlocation(int x, int y);
+	
    // std::vector<int> getlocations (location* loc);//This functions is needed for saving and loading.
 };
+
+void world_saveworld(char[] filepath);
+bool world_move(int dir, rpgclass you);
+void world_changeloc(location& oldloc, location& newloc);
+void world_addcharacter(rpgclass character, int x, int y);
+//void addcharacter(rpgclass );
+int& world_getlocation(int x, int y);
