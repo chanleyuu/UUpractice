@@ -1,6 +1,8 @@
 #include "world.h"
 
-world_init() : X_{ 100 }, Y_ { 100 }  {
+//Parameters passed will be world size
+//Negative values will default to 100
+world_init(world w, int x, int y)  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
@@ -13,7 +15,7 @@ world_init() : X_{ 100 }, Y_ { 100 }  {
 
 }
 
-
+/*
 world::world(int x, int y) : X_{ x }, Y_{ y }  {
 	//squares_.resize(X_);
 
@@ -26,7 +28,7 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 		squares_.clear();
 	}
 
-}
+} */
 
 world::~world() {
     delete origin_;

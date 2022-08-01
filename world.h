@@ -7,6 +7,7 @@
 
 #include "rpgclass.h"
 #include "location.h"
+#include "vector"
 
 //class rpgclass;
 
