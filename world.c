@@ -2,15 +2,15 @@
 
 //Parameters passed will be world size
 //Negative values will default to 100
-world_init(world w, int x, int y)  {
+void world_init(world w, int x, int y)  {
 
 	for (int i = 0; i < Y_; i++) {
         for (int e = 0; e < X_; e++){
-            location L(occupier::empty, type::ground, e, i);
-            squares_.push_back(L);
+            //location L(occupier::empty, type::ground, e, i);
+            //squares_.push_back(L);
         }
-		loco_.push_back(squares_);
-		squares_.clear();
+		//loco_.push_back(squares_);
+		//squares_.clear();
 	}
 
 }
@@ -30,16 +30,14 @@ world::world(int x, int y) : X_{ x }, Y_{ y }  {
 
 } */
 
-world::~world() {
-    delete origin_;
-}
 
 
 
-bool world::move(int dir, rpgclass you)
+
+bool world_move(int dir, rpgclass you)
 {
 	location* loc = you.getlocation();
-	location* newloc = nullptr;
+	location* newloc = NULL; //Should this be done like this?
 	int index = you.getoccindex();
 
     //Switch case in based on direction

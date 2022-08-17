@@ -31,6 +31,8 @@ typedef struct vector_map {
 
 void vector_push_rpgclass(vector v, rpgclass class); 
 
+void vector_push_rpgclass(vector v, rpgclass class); 
+
 void vector_push_map(vector_map m, vector_map map);
 
 struct rpgclass vector_pop_rpgclass();
